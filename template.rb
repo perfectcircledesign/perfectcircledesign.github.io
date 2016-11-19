@@ -187,7 +187,7 @@ insert_into_file "config/environments/production.rb", "ActionMailer::Base.smtp_s
 ActionMailer::Base.delivery_method = :smtp
 ", :after => "Rails::Initializer.run do |config|\n"
 
-insert_into_file "Procfile", "web: bundle exec puma -C config/puma.rb"
+# insert_into_file "Procfile", "web: bundle exec puma -C config/puma.rb"
 
 insert_into_file "config/puma.rb", "workers Integer(ENV['WEB_CONCURRENCY'] || 2)
 threads_count = Integer(ENV['RAILS_MAX_THREADS'] || 5)
