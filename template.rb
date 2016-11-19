@@ -34,7 +34,7 @@ end
 append_file 'Gemfile', <<-GEMFILE
 
 # Refinery CMS
-gem 'refinerycms', '2.0.3'
+gem 'refinerycms', '2.0.3', :git => 'git://github.com/perfectcircledesign/refinerycms.git', :branch => '2-0-stable'
 gem 'refinerycms-core', '2.0.3'
 
 # Specify additional Refinery CMS Extensions here (all optional):
