@@ -130,7 +130,6 @@ end
 append_file 'Gemfile', <<-GEMFILE
 
 #Locked Gems
-gem "dragonfly", '0.9.12'
 gem 'refinerycms-settings', '2.0.1'
 
 #Used Gems
@@ -159,8 +158,8 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
-  gem 'thin'
+  gem 'pg', '0.17.1'
+  gem 'puma'
 end
 
 
