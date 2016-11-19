@@ -170,26 +170,8 @@ GEMFILE
 create_file "config/initializers/errbit.rb"
 empty_directory  "db/fixtures"
 create_file "db/fixtures/001_pages.rb"
-create_file "Procfile"
-create_file "config/puma.rb"
-
-
-#Setup for heroku
-insert_into_file "config/environments/production.rb", "ActionMailer::Base.smtp_settings = {
-    :from           => 'no-reply@newden.co.za',
-    :address        => 'smtp.sendgrid.net',
-    :port           => '587',
-    :authentication => :plain,
-    :user_name      => ENV['SENDGRID_USERNAME'],
-    :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'heroku.com'
-}
-ActionMailer::Base.delivery_method = :smtp
-", :after => "Rails::Initializer.run do |config|\n"
-
-# insert_into_file "Procfile", "web: bundle exec puma -C config/puma.rb"
-
-insert_into_file "config/puma.rb", "workers Integer(ENV['WEB_CONCURRENCY'] || 2)
+create_file "Procfile", "web: bundle exec puma -C config/puma.rb"
+create_file "config/puma.rb", "workers Integer(ENV['WEB_CONCURRENCY'] || 2)
 threads_count = Integer(ENV['RAILS_MAX_THREADS'] || 5)
 threads threads_count, threads_count
 
@@ -206,6 +188,19 @@ on_worker_boot do
 end
 "
 
+
+#Setup for heroku
+insert_into_file "config/environments/production.rb", "ActionMailer::Base.smtp_settings = {
+    :from           => 'no-reply@newden.co.za',
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => 'heroku.com'
+}
+ActionMailer::Base.delivery_method = :smtp
+", :after => "Rails::Initializer.run do |config|\n"
 
 run 'bundle update'
 rake 'db:create'
