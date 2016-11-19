@@ -51,7 +51,7 @@ if yes? "Do you want to add the pods engine?"
   gems << 'refinerycms-pods'
   gem 'refinerycms-pods', '~> 2.1.0'
   gem 'refinerycms-videos', '~> 2.0.1'
-  gem 'refinerycms-portfolio', :git => 'git://github.com/refinery/refinerycms-portfolio.git', :branch => '2-0-stable'
+  gem 'refinerycms-portfolio', :git => 'git://github.com/perfectcircledesign/refinerycms-portfolio.git', :branch => '2-0-stable'
 else
   if yes? "Do you want to add the videos engine?"
     gems << 'refinerycms-videos'
@@ -59,7 +59,7 @@ else
   else
     if yes? "Do you want to add the portfolio engine?"
       gems << 'refinerycms-portfolio'
-      gem 'refinerycms-portfolio', :git => 'git://github.com/refinery/refinerycms-portfolio.git', :branch => '2-0-stable'
+      gem 'refinerycms-portfolio', :git => 'git://github.com/perfectcircledesign/refinerycms-portfolio.git', :branch => '2-0-stable'
     end
   end
 end
