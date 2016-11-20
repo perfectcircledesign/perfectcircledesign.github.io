@@ -215,6 +215,6 @@ say <<-SAY
     1. Create app on Errbit and copy to the errbit.rb file 
     2. Comment out Bundler.require(*Rails.groups(:assets => %w(development test)))
     3. Uncomment Bundler.require(:default, :assets, Rails.env)
-    4. Add config.assets.initialize_on_precompile = false to the application.rb 
+    4. Add config.assets.initialize_on_precompile = true to the application.rb 
   ============================================================================
 SAY
