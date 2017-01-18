@@ -131,6 +131,7 @@ append_file 'Gemfile', <<-GEMFILE
 
 #Locked Gems
 gem 'refinerycms-settings', '2.0.1'
+gem 'nokogiri', '1.6.8.1'
 
 #Used Gems
 # Seed our data smartly
@@ -160,7 +161,9 @@ end
 group :production do
   gem 'pg', '0.17.1'
   gem 'puma'
+  gem 'heroku-deflater'
 end
+
 
 
 
