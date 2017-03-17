@@ -150,7 +150,7 @@ gem "jquery-colorbox-rails", "0.1.4"
 gem 'fog', '~> 0.8.1'
 
 #Monitoring
-gem 'newrelic_rpm'
+gem 'newrelic_rpm', ' 3.18.1.330'
 
 group :development do
      gem 'better_errors', '1.1.0'
